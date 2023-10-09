@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1254,3654</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1255,2038</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>dataExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="dataExcel" sap:VirtualizedContainerService.HintSize="800,3589" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="dataExcel" sap:VirtualizedContainerService.HintSize="784,1973" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="C:\Users\Thomas Calmettes\Documents\UiPath\testCom.xlsm" Name="data" />
     </Sequence.Variables>
@@ -123,38 +123,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="738,452" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Activités ignorées" sap:VirtualizedContainerService.HintSize="450,373" sap2010:WorkflowViewState.IdRef="Sequence_15">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[tabNomSociete.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="388,262" sap2010:WorkflowViewState.IdRef="If_1">
-            <If.Then>
-              <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </If.Then>
-            <If.Else>
-              <Sequence DisplayName="" sap2010:WorkflowViewState.IdRef="Sequence_14" />
-            </If.Else>
-          </If>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="738,1627" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="722,1862" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="688,1540" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="688,1775" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="lastLine" />
             </Sequence.Variables>
@@ -163,19 +138,19 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="626,1429" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[data]">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="626,1664" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[data]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="592,1160" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="592,1391" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="530,1049" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_2" Range="[Excel.Sheet(&quot;Feuil1&quot;)]" SaveAfterEachRow="False">
+                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="530,1280" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_2" Range="[Excel.Sheet(&quot;Feuil1&quot;)]" SaveAfterEachRow="False">
                       <ueab:ExcelForEachRowX.Body>
                         <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                           <ActivityAction.Argument1>
@@ -184,16 +159,24 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="496,867" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="496,1095" sap2010:WorkflowViewState.IdRef="Sequence_10">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(0)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[tabNomSociete]" />
-                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(1)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[tabAdresse]" />
-                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(2)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[tabSite]" />
-                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(3)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[tabTelephone]" />
+                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(0)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[tabNomSociete]" />
+                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(1)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[tabAdresse]" />
+                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(2)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[tabSite]" />
+                            <ueab:WriteCellX Cell="[CurrentRow.ByIndex(3)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[tabTelephone]" />
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="434,180" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InScope="[Excel]" ScopeIdentifier="Excel" Shortcuts="[d(hk)][d(alt)][k(F8)][u(alt)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NKeyboardShortcuts>
                           </Sequence>
                         </ActivityAction>
                       </ueab:ExcelForEachRowX.Body>
@@ -206,72 +189,5 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
-    <Sequence sap:VirtualizedContainerService.HintSize="738,1319" sap2010:WorkflowViewState.IdRef="Sequence_8">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: testCom.xlsm - Excel" sap:VirtualizedContainerService.HintSize="676,1208" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="ed98ea3e-90bd-4bdb-b351-fa73e1adfe27" Version="V2">
-        <uix:NApplicationCard.Body>
-          <ActivityAction x:TypeArguments="x:Object">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="642,877" sap2010:WorkflowViewState.IdRef="Sequence_7">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="580,762" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
-                <ueab:ExcelProcessScopeX.Body>
-                  <ActivityAction x:TypeArguments="ui:IExcelProcess">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="546,675" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="484,564" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[data]">
-                        <ueab:ExcelApplicationCard.Body>
-                          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-                            </ActivityAction.Argument>
-                            <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="450,291" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,180" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(alt)][k(F8)][u(alt)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </uix:NKeyboardShortcuts>
-                            </Sequence>
-                          </ActivityAction>
-                        </ueab:ExcelApplicationCard.Body>
-                      </ueab:ExcelApplicationCard>
-                    </Sequence>
-                  </ActivityAction>
-                </ueab:ExcelProcessScopeX.Body>
-              </ueab:ExcelProcessScopeX>
-            </Sequence>
-          </ActivityAction>
-        </uix:NApplicationCard.Body>
-        <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="-8, -8, 1936, 1048" FilePath="C:\Program Files\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVFhH7Zc9SEJRGIZdo9B+pRoShwhChIoQhCBbgsgpGgJpKyKIaAmClqDBoSmyLQikrbaCppaksdvUGDQ1FjQ0fvlezpGjfefcn86FkF548Hr4vvO+nh/U2L+8lK6uO3XIL1O1gyA4wkYvzsQEY2JE2OjFmZjgTEwIG704ExOciQlhoxdnYoIzMSFs9Bo5LpEXqcpq+ADd+wWnDoWhZ3eWBjYKbojfBGAn90vH/CjFt/ON9zKIX/5WgNRhke5fnlz2bk4a4zOVtcY4ntUe6ytw+nBJ0MfXpxsIYzCG8Npabz0ATGEOle/OafFsx32GskcrTbUgkjOweVV2DRFEfnqE4WojO4TSGHp9f2NrQGQBrp9rwp7fe0l8OkXJpQkaLOVcuBoTbAC579gCeR6wLVyt9QA4hFhyCPsOIPVWqFgPwF1DGeji8bapFlgNoF45dcnlrYBQo/ZEcgaC0BYBQn8dJ7byPwIERfzs0KtzfIh0dGWGKZFLRxugd26MvEguT7KT+0HY6NW3kCET/cUsO7FfhI1eXJNNhI1eXJNNhI1e9SKntcki3n/N2lyx2De7iUsgzKBEqQAAAABJRU5ErkJggg==" InformativeScreenshot="0b846ac6b0545c11826b4f381652cd35.png" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='testCom.xlsm - Excel' /&gt;" Title="testCom.xlsm - Excel" />
-        </uix:NApplicationCard.TargetApp>
-      </uix:NApplicationCard>
-    </Sequence>
   </Sequence>
 </Activity>
