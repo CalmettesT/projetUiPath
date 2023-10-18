@@ -1,14 +1,17 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="tabNomSociete" Type="InOutArgument(s:String[])" />
-    <x:Property Name="tabAdresse" Type="InOutArgument(s:String[])" />
-    <x:Property Name="tabSite" Type="InOutArgument(s:String[])" />
-    <x:Property Name="tabTelephone" Type="InOutArgument(s:String[])" />
+    <x:Property Name="io_tabNomSociete" Type="InOutArgument(s:String[])" />
+    <x:Property Name="io_tabAdresse" Type="InOutArgument(s:String[])" />
+    <x:Property Name="io_tabSite" Type="InOutArgument(s:String[])" />
+    <x:Property Name="io_tabTelephone" Type="InOutArgument(s:String[])" />
+    <x:Property Name="io_secteur" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_nbBoucle" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_corpMail" Type="InOutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1041.3333333333333,601.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1254,929</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -119,27 +122,28 @@
       <AssemblyReference>PresentationUI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,536.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="nomSociete" />
-      <Variable x:TypeArguments="sd:DataTable" Name="adresse" />
-      <Variable x:TypeArguments="sd:DataTable" Name="site" />
-      <Variable x:TypeArguments="sd:DataTable" Name="telephone" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\Thomas Calmettes\Documents\UiPath\testCom.xlsm" Name="data" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="Index" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="NBExcel" />
-    </Sequence.Variables>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="450,864" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="extractData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="extractData.xaml">
+    <ui:LogMessage DisplayName="Log init" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Init main file&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="extractConfig.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="extractConfig.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabNomSociete" />
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabAdresse" />
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabSite" />
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabTelephone" />
+        <OutArgument x:TypeArguments="x:String" x:Key="out_corpMail">[io_corpMail]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_nbBoucle">[io_nbBoucle]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_secteur">[io_secteur]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="extractData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="extractData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_tabNomSociete">[io_tabNomSociete]</OutArgument>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_tabAdresse">[io_tabAdresse]</OutArgument>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_tabSite">[io_tabSite]</OutArgument>
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_tabTelephone">[io_tabTelephone]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_secteur">[io_secteur]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_nbBoucle">[io_nbBoucle]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -148,17 +152,22 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="dataExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="dataExcel.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="dataExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="dataExcel.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabNomSociete" />
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabAdresse" />
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabSite" />
-        <InOutArgument x:TypeArguments="s:String[]" x:Key="tabTelephone" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_tabNomSociete">[io_tabNomSociete]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_tabAdresse">[io_tabAdresse]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_tabSite">[io_tabSite]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_tabTelephone">[io_tabTelephone]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="mailing.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="mailing.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="mailing.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="mailing.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_secteur">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_secteur" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_corpMail">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_corpMail" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
