@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1254,2500</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>784,2831</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>mailing_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="794,2435" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap:VirtualizedContainerService.HintSize="794,2766" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="emailExpediteur" />
       <Variable x:TypeArguments="x:String" Name="mdpUipahtGmail" />
@@ -131,13 +131,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Init" sap:VirtualizedContainerService.HintSize="732,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Init mailing&quot;]" />
-    <TryCatch DisplayName="Try Catch Asset" sap:VirtualizedContainerService.HintSize="732,371" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Init" sap:VirtualizedContainerService.HintSize="732,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Init mailing&quot;]" />
+    <TryCatch DisplayName="Try Catch Asset" sap:VirtualizedContainerService.HintSize="732,377" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:GetRobotCredential Password="{x:Null}" TimeoutMS="{x:Null}" AssetName="mdpMailCredidential" CacheStrategy="None" DisplayName="Get Credential id mail" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Username="[emailExpediteur]" />
+        <ui:GetRobotCredential Password="{x:Null}" TimeoutMS="{x:Null}" AssetName="mdpMailCredidential" CacheStrategy="None" DisplayName="Get Credential id mail" sap:VirtualizedContainerService.HintSize="334,144" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Username="[emailExpediteur]" />
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -148,52 +148,71 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:LogMessage DisplayName="Log Message id non recup" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;ID mail non récupéré dans asset&quot;]" />
+            <ui:LogMessage DisplayName="Log Message id non recup" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;ID mail non récupéré dans asset&quot;]" />
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:GetPassword DisplayName="Get Password gmail UiPath" sap:VirtualizedContainerService.HintSize="732,25" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABJEHM6VaAkCW8OypoQAXbwAAAAACAAAAAAAQZgAAAAEAACAAAADVEJI3SUPkacicm5fFuHlDPDUYH5ZVu3b9odc6grBsyQAAAAAOgAAAAAIAACAAAAD1tinVWHr+8tw0d9DNQ1aAKLOdOPHwp0HchydHMFTLqiAAAABe6MVpnNW5SN5VQjT0f0i6YaM/gc4CxAf4QWreHEM32UAAAAD4sMeQmatp6RJEDqUatZjoiyq9vmHKD2EJRAaJyeNHygE+04Qb5zfid+SzLmUnNqq47JVlPhBTkidJBkA8ZXPr" Result="[mdpuipahtGmail]" />
-    <If Condition="[string.IsNullOrEmpty(mdpUipahtGmail) = true]" DisplayName="If asset non recup" sap:VirtualizedContainerService.HintSize="732,411" sap2010:WorkflowViewState.IdRef="If_2">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="732,215" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Activités ignorées" sap:VirtualizedContainerService.HintSize="450,136" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message prebleme get password" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Le get password du gmail n'a pas marché&quot;]" />
+          <ui:GetPassword DisplayName="Get Password gmail UiPath" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABJEHM6VaAkCW8OypoQAXbwAAAAACAAAAAAAQZgAAAAEAACAAAADVEJI3SUPkacicm5fFuHlDPDUYH5ZVu3b9odc6grBsyQAAAAAOgAAAAAIAACAAAAD1tinVWHr+8tw0d9DNQ1aAKLOdOPHwp0HchydHMFTLqiAAAABe6MVpnNW5SN5VQjT0f0i6YaM/gc4CxAf4QWreHEM32UAAAAD4sMeQmatp6RJEDqUatZjoiyq9vmHKD2EJRAaJyeNHygE+04Qb5zfid+SzLmUnNqq47JVlPhBTkidJBkA8ZXPr" Result="[mdpuipahtGmail]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <Assign DisplayName="Assign mdp Gmail" sap:VirtualizedContainerService.HintSize="732,83" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[mdpUipahtGmail]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["posw cwna satv sgao"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[string.IsNullOrEmpty(mdpUipahtGmail) = true]" DisplayName="If asset non recup" sap:VirtualizedContainerService.HintSize="732,414" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message prebleme get password" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Le get password du gmail n'a pas marché&quot;]" />
         </Sequence>
       </If.Then>
       <If.Else>
         <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11" />
       </If.Else>
     </If>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="732,1216" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="732,1223" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="698,1129" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Faire" sap:VirtualizedContainerService.HintSize="698,1136" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File mail expediteur" sap:VirtualizedContainerService.HintSize="636,1018" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="C:\Users\Thomas Calmettes\Documents\UiPath\testCom.xlsm">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File mail expediteur" sap:VirtualizedContainerService.HintSize="636,1025" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="C:\Users\Thomas Calmettes\Documents\UiPath\testCom.xlsm">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Faire chaque ligne" sap:VirtualizedContainerService.HintSize="602,749" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Faire chaque ligne" sap:VirtualizedContainerService.HintSize="602,752" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row read cell" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="540,638" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[Excel.Sheet(&quot;Feuil1&quot;).Range(&quot;E:E&quot;)]" SaveAfterEachRow="False">
+                    <ueab:ExcelForEachRowX DisplayName="For Each Excel Row read cell" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="540,641" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[Excel.Sheet(&quot;Feuil1&quot;).Range(&quot;E:E&quot;)]" SaveAfterEachRow="False">
                       <ueab:ExcelForEachRowX.Body>
                         <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                           <ActivityAction.Argument1>
